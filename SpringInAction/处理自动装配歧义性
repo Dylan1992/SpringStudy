@@ -1,0 +1,16 @@
+在自动装配中有可能面临的多个注入，
+可以使用 标识首选Bean
+@Primary
+
+
+可以使用限定自动装配配置
+@Qualifier
+
+自定义限定符：
+@Qualifier("XXX")
+
+创建自定义注解继承@Qualifier
+@Target({ElementType.CONSTRUCTOR,ElementType.FIELD,ElementType.METHOD,ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Qualifier
+public @interface XXX{}
