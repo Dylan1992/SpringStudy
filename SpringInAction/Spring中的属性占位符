@@ -1,0 +1,21 @@
+非依赖于组建扫描和自动装配时可以使用 ${}
+依赖于组建扫描和自动装配时可以使用 @Value
+例子：
+<bean id="X" class="xx.Xx" c:_yy = "${xx.Yy}"/>
+public Xx(@Value("${xx.xx}") String xx){
+    this.xx = xx;
+}
+
+或者推荐使用Spring表达式语言（Spring Expression Language,SpEL）进行装配   
+语法格式 : #{...}
+例子：
+#{T(System).currentTimeMillis()} 最终结果是计算当前时间的毫秒数
+#{xx.yy}可以用于引用其他bean或其他bean的属性
+#{systemPropertise['xx.yy']}可以引用系统属性
+
+SpEL常用表达式
+算数运算符 +,-,*,/,%,^
+比较运算符 <,>,==,<=,>=,lt,gt,eq,le,ge
+逻辑运算符 and,or,not,|
+条件运算符 ?:(ternary),?:(Elvis)
+正则表达式 matches
