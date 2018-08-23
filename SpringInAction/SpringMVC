@@ -1,0 +1,2 @@
+springMVC的所有请求都会通过一个前段控制器Servlet。
+在SpringMVC中 前段控制器就是DispatcherServlet。DispatcherServlet会查询一个或多个处理器映射来确定请求的下一站是哪里。
